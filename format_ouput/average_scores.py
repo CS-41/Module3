@@ -11,7 +11,11 @@ The output shows the first name, last name, age and the average of the test scor
 import unittest
 
 
-def average(score_list):
+def average():
+    score1 = float(input("Enter 1st score: "))  # Input test scores. Float used for partial credit scores.
+    score2 = float(input("Enter 2nd score: "))
+    score3 = float(input("Enter 3rd score: "))
+    score_list = [score1, score2, score3]
     return sum(score_list) / len(score_list)
 
 
@@ -19,12 +23,8 @@ if __name__ == '__main__':
     first_name = input("Enter your first name: ")  # Input first name
     last_name = input("Enter your last name: ")  # Input last name
     user_age = int(input("Enter your age: "))  # Input age
-    score1 = float(input("Enter 1st score: "))  # Input test scores. Float used for partial credit scores.
-    score2 = float(input("Enter 2nd score: "))
-    score3 = float(input("Enter 3rd score: "))
-    score_list = [score1, score2, score3]
 
-    average_scores = average(score_list)
+    average_scores = average()
 
     # Output formats the average to print only 2 decimal places
     print("Name: {0},{1}; age: {2}; average score: {3:.2f}".format(last_name, first_name, user_age, average_scores))
