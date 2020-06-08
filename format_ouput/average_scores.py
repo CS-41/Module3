@@ -10,6 +10,11 @@ The output shows the first name, last name, age and the average of the test scor
 
 import unittest
 
+
+def average(score_list):
+    return sum(score_list) / len(score_list)
+
+
 if __name__ == '__main__':
     first_name = input("Enter your first name: ")  # Input first name
     last_name = input("Enter your last name: ")  # Input last name
@@ -19,19 +24,10 @@ if __name__ == '__main__':
     score3 = float(input("Enter 3rd score: "))
     score_list = [score1, score2, score3]
 
-    a = sum(score_list)  # Sums list
-    b = len(score_list)  # Counts values in list
-    test_average = a / b
-
-
-    def average(test_average):
-        return test_average
-
-
-    average_scores = average(test_average)
+    average_scores = average(score_list)
 
     # Output formats the average to print only 2 decimal places
-    print("Name: {0},{1}; age: {2}; average score: {3:.2f}".format(last_name, first_name, user_age, test_average))
+    print("Name: {0},{1}; age: {2}; average score: {3:.2f}".format(last_name, first_name, user_age, average_scores))
 
 unittest.main()
 
